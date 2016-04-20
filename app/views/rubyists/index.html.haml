@@ -9,6 +9,13 @@
       %h4 ID
     %div{class: 'col-md-5'}
       %h4 GitHub URL
+    %div{class: 'col-md-2'}
+      %h4 Joined On
+    %div{class: 'col-md-1'}
+      %h4 Repos
+    %div{class: 'col-md-1'}
+      %h4 Location
+
   -@locosrubios.each do |lr|
     %div{class: 'row'}
       =render 'loco', lr: lr

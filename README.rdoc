@@ -1,0 +1,3 @@
+== Local Rubyists
+
+This webapp uses the GitHub api to generate JSON views of local Ruby on Rails programmers

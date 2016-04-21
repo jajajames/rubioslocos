@@ -1,3 +1,5 @@
+%div{class: 'col-md-3'}
+  =link_to(image_tag(lr.avatar_url, class: "img-responsive"), lr.html_url)
 %div{class: "col-md-2"}
   =link_to lr.login, lr.html_url
 %div{class: "col-md-1"}
@@ -7,8 +9,8 @@
 %div{class: "col-md-1"}
   =lr.following
 %div{class: "col-md-2"}
-  =lr.created_at
+  =lr.created_at.to_date.to_s.humanize.slice(2,9)
 %div{class: "col-md-1"}
   =lr.public_repos
 %div{class: "col-md-1"}
-  =lr.location
+  =lr.location.to_s.split(' ').first

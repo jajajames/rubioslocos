@@ -7,14 +7,6 @@ class RubyistsController < ApplicationController
     @locosrubios = map_gh_info(lrs)
   end
 
-  def human_time(time)
-    time.to_date.to_s.humanize.slice(2,9)
-  end
-
-  def one_word(str)
-    str.split(' ').first
-  end
-
   private
 
   def map_gh_info(users)

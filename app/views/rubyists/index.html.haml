@@ -1,24 +1,25 @@
 %div{class: 'jumbotron'}
   %h1{class: "text-center"} Local Rubyists
 
-%div{class: 'container'}
-  %div{class: 'row'}
-    %div{class: 'col-md-3'}
-    %div{class: 'col-md-2'}
+.container
+  .row
+    .col-md-3
+    .col-md-2
       %h5 User Name
-    %div{class: 'col-md-1'}
+    .col-md-1
       %h5 ID
-    %div{class: 'col-md-1'}
+    .col-md-1
       %h5 Followers
-    %div{class: 'col-md-1'}
+    .col-md-1
       %h5 Following
-    %div{class: 'col-md-2'}
+    .col-md-2
       %h5 Joined On
-    %div{class: 'col-md-1'}
+    .col-md-1
       %h5 Repos
-    %div{class: 'col-md-1'}
+    .col-md-1
       %h5 Location
 
   -@locosrubios.each do |lr|
-    %div{class: 'row'}
-      =render 'loco', lr: lr
+    .row
+      .user
+        =render 'loco', lr: lr

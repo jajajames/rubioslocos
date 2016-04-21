@@ -7,17 +7,19 @@ class RubyistsController < ApplicationController
     @locosrubios = map_gh_info(lrs)
   end
 
+  def human_time(time)
+    time.to_date.to_s.humanize.slice(2,9)
+  end
+
+  def one_word(str)
+    str.split(' ').first
+  end
+
   private
 
   def map_gh_info(users)
-    users.collect do |lr|
-      user = Octokit.user lr.username
-      lr.created_at   = human_time(user.created_at)
-      lr.public_repos = user.public_repos
-      lr.location     = user.location
-      lr.followers    = user.followers
-      lr.following    = user.following
+    users.map do |lr|
+      Octokit.user lr.login
     end
-    users
   end
 end
